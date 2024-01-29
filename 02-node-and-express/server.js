@@ -26,7 +26,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.route("/").get((req, res) => {
-  res.render("index");
+  res.render("index", {
+    title: "Hello",
+    message: "Please log in",
+  });
 });
 
 const PORT = process.env.PORT || 3000;
